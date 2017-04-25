@@ -1,3 +1,4 @@
+require('now-logs')(process.env.NOW_LOGS_KEY)
 const { json, send } = require('micro')
 const parse = require('urlencoded-body-parser')
 const contentType = require('content-type')

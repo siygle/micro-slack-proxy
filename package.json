@@ -1,5 +1,5 @@
 {
-  "name": "slack-sandbox-proxy",
+  "name": "micro-slack-proxy",
   "description": "Useful when you develop on slack app, proxy one specific app request to target host",
   "main": "index.js",
   "scripts": {
@@ -10,6 +10,11 @@
     "debug": "^2.6.4",
     "micro": "^7.3.2",
     "node-fetch": "^1.6.3",
+    "now-logs": "^0.0.7",
     "urlencoded-body-parser": "^2.0.1"
+  },
+  "now": {
+    "name": "micro-slack-proxy",
+    "type": "npm"
   }
 }
