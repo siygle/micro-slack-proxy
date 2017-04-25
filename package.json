@@ -7,7 +7,6 @@
   },
   "dependencies": {
     "content-type": "^1.0.2",
-    "debug": "^2.6.4",
     "micro": "^7.3.2",
     "node-fetch": "^1.6.3",
     "now-logs": "^0.0.7",

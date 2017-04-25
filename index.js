@@ -4,7 +4,6 @@ const parse = require('urlencoded-body-parser')
 const contentType = require('content-type')
 const fetch = require('node-fetch')
 const qs = require('querystring')
-const debug = require('debug')('slack-sandbox-proxy')
 
 const PROXY_HOST = process.env.HOST
 
@@ -13,7 +12,7 @@ if (!PROXY_HOST) {
   process.exit(1)
 }
 
-async function _prepareProxy(type, req) {
+async function _prepareProxy (type, req) {
   let tmpData, jsData
   switch (type) {
     case 'application/json':
@@ -25,7 +24,7 @@ async function _prepareProxy(type, req) {
       jsData = qs.stringify(tmpData)
       break
     default:
-      console.error(`Not support req type: ${reqContent.type}`)
+      console.error(`Not support req type: ${type}`)
       return false
   }
 
@@ -39,7 +38,6 @@ async function _prepareProxy(type, req) {
 
 module.exports = async (req, res) => {
   const reqContent = contentType.parse(req)
-  console.log('req', reqContent)
 
   let jsData = await _prepareProxy(reqContent.type, req)
   if (!jsData) {
@@ -71,12 +69,10 @@ module.exports = async (req, res) => {
       resData = await fetch(PROXY, { method: 'DELETE' })
       break
     default:
-      console.log(`Not support request method: ${req.metho}`)
+      console.error(`Not support request method: ${req.method}`)
   }
 
   const resBuffer = await resData.buffer()
-  console.log('res', resBuffer, resBuffer.length)
-
   if (resBuffer.length > 0) {
     try {
       const resJson = JSON.parse(resBuffer.toString())
