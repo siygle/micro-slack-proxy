@@ -1,6 +1,6 @@
 ## micro-slack-proxy
 
-A tool try to make slack app development easier. Bulit with [zeit/micro](https://github.com/zeit/micro) and can easily host on [now](https://zeit.co/now). Then you can assign deployed URL as your slack app URL. All traffic would proxy to your dev host (with localtunnel or ngrok).
+A tool try to make slack app development easier. Built with [zeit/micro](https://github.com/zeit/micro) and can easily host on [now](https://zeit.co/now). Then you can assign deployed URL as your slack app URL. All traffic would proxy to your dev host (with localtunnel or ngrok).
 
 ### How-to
 
