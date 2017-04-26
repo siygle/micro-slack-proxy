@@ -12,5 +12,5 @@ now -e NOW_LOGS_KEY=$YOUR_SECRET_KEY -e HOST=$YOUR_DEV_HOST
 
 You can also set an alias for your deployed app URL, you can assign this URL for slack app on setting page. Don't need to go update every time when you change your local dev URL.
 ```
-now alias set $YOUR_SPECIAL_URL
+now alias set $NOW_DEPLOYED_URL $YOUR_SPECIAL_URL
 ```
